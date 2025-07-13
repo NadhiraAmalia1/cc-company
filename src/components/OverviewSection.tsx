@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function OverviewSection() {
   return (
@@ -14,7 +15,7 @@ export default function OverviewSection() {
           transition={{ duration: 0.6 }}
           className="w-full h-64 md:h-80 relative rounded-lg overflow-hidden"
         >
-          <img
+          <Image
             src="/assets/about.jpg"
             alt="Capturie behind the scenes"
             className="object-cover w-full h-full"

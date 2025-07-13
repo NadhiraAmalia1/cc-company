@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { getBlogBySlug } from "@/lib/backendless";
 import type { Blog } from "@/types/blog";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
@@ -39,16 +41,16 @@ export default function BlogDetailPage() {
       <div className="text-xs text-gray-400 mb-8">
         by {blog.author} • {new Date(blog.publishedAt).toLocaleDateString()}
       </div>
-      <img
+      <Image
         src={blog.image}
         alt={blog.title}
         className="w-full rounded-lg object-cover mb-8"
       />
       <div className="prose max-w-none">{blog.content}</div>
       <div className="mt-10">
-        <a href="/blog" className="text-blue-500 underline">
+        <Link href="/blog" className="text-blue-500 underline">
           ← Back to Blog List
-        </a>
+        </Link>
       </div>
     </main>
   );

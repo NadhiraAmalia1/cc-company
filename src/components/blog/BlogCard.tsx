@@ -5,6 +5,7 @@ import { Clock, User, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useAuthStore } from "@/stores/authStore";
 import { useState } from "react";
+import Image from "next/image";
 
 interface BlogCardProps {
   post: Blog;
@@ -37,7 +38,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
       >
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
           <div className="relative h-48 overflow-hidden">
-            <img
+            <Image
               src={post.image}
               alt={post.title}
               className="absolute inset-0 w-full h-full object-cover"
